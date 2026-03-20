@@ -19,35 +19,43 @@ export default function Footer() {
         <div>
           <h3 className="text-lg text-black font-semibold uppercase">How To Purchase</h3>
 
-          <Link href="/website-purchase">
+          <Link href="https://datarush.lunar.cyou/sstopup" target="_blank" rel="noopener noreferrer">
             <p className="mt-2 flex items-center text-black justify-start gap-2 cursor-pointer underline">
               <FaGlobe className="text-2xl text-red-600 mb-2" />
               Website
             </p>
           </Link>
 
-          <Link href="whatsapp-bot">
+          <Link href="https://wa.me/254700042349?text=Hello" target="_blank" rel="noopener noreferrer">
             <p className="mt-2 flex items-center text-black justify-start gap-2 cursor-pointer underline">
               <FaWhatsapp className="text-2xl text-green-600 mb-2" />
               WhatsApp Bot
             </p>
           </Link>
 
-          <Link href="facebook-bot">
+          <Link href="https://www.facebook.com/kevin.rotich.9" target="_blank" rel="noopener noreferrer">
             <p className="mt-2 flex items-center text-black justify-start gap-2 cursor-pointer underline">
               <FaFacebook className="text-2xl text-blue-600 mb-2" />
               Facebook Bot
             </p>
           </Link>
+          <p className="text-xs text-gray-700 ml-8 -mt-1 mb-1 italic">💬 Message us with the word <strong>&quot;Start&quot;</strong> to activate bot</p>
 
-          <Link href="mobile-app">
+          <Link href="https://www.facebook.com/profile.php?id=100089017086830&sk=followers" target="_blank" rel="noopener noreferrer">
+            <p className="mt-2 flex items-center text-black justify-start gap-2 cursor-pointer underline">
+              <FaFacebook className="text-2xl text-blue-800 mb-2" />
+              Visit Our Page
+            </p>
+          </Link>
+
+          <Link href="https://datarush.lunar.cyou/sstopup" target="_blank" rel="noopener noreferrer">
             <p className="mt-2 flex items-center text-black justify-start gap-2 cursor-pointer underline">
               <FaMobileAlt className="text-2xl text-red-600 mb-2" />
               App
             </p>
           </Link>
 
-          <Link href="offline">
+          <Link href="https://www.scofhub.com/post/buy-ss-topup-packages-offline-using-paybill" target="_blank" rel="noopener noreferrer">
             <p className="mt-2 flex items-center text-black justify-start gap-2 cursor-pointer underline">
               <FaStore className="text-2xl text-red-600 mb-2" />
               Offline
