@@ -8,10 +8,10 @@ import { motion } from "framer-motion";
 
 const channels = [
   { name: "Website", Icon: FaGlobe, link: "https://datarush.lunar.cyou/sstopup" },
-  { name: "App", Icon: FaMobileAlt, link: "https://play.google.com/store/apps/details?id=com.lunartech.sstopup&pcampaignid=web_share" },
-  { name: "WhatsApp Bot", Icon: FaWhatsapp, link: "https://api.whatsapp.com/send?phone=+254700042349&text=Hello" },
-  { name: "Facebook Bot", Icon: FaFacebook, link: "https://www.facebook.com/profile.php?id=100089017086830" },
-  { name: "Offline Purchase (Payslips)", Icon: FaStore, link: "https://datarush.lunar.cyou/sstopup" },
+  { name: "App", Icon: FaMobileAlt, link: "https://datarush.lunar.cyou/sstopup" },
+  { name: "WhatsApp Bot", Icon: FaWhatsapp, link: "https://wa.me/254700042349?text=Hello" },
+  { name: "Facebook Bot", Icon: FaFacebook, link: "https://www.facebook.com/kevin.rotich.9" },
+  { name: "Offline Purchase (Payslips)", Icon: FaStore, link: "https://www.scofhub.com/post/buy-ss-topup-packages-offline-using-paybill" },
 ];
 
 const services = [
@@ -19,49 +19,49 @@ const services = [
     title: "Airtime",
     Icon: GiMoneyStack,
     description: "Purchase airtime for all major networks instantly and securely.",
-    url: "/airtime",
+    url: "https://datarush.lunar.cyou/sstopup",
   },
   {
     title: "Convert Airtime to Cash",
     Icon: GiReceiveMoney,
     description: "Turn your unused airtime into cash in just a few clicks.",
-    url: "/convert-airtime",
+    url: "https://datarush.lunar.cyou/sstopup",
   },
   {
     title: "Bonga Points",
     Icon: GiMoneyStack,
     description: "Buy and redeem Bonga points across multiple services.",
-    url: "/bonga-points",
+    url: "https://datarush.lunar.cyou/sstopup",
   },
   {
     title: "Calls & Minutes",
     Icon: MdEditNote,
     description: "Manage your voice call bundles and usage with ease.",
-    url: "/calls-minutes",
+    url: "https://datarush.lunar.cyou/sstopup",
   },
   {
     title: "Bingwa Sokoni Packages",
     Icon: FaStore,
     description: "Explore our market bundles crafted for small businesses.",
-    url: "/bingwa-sokoni",
+    url: "https://datarush.lunar.cyou/sstopup",
   },
   {
     title: "All in One",
     Icon: MdEditNote,
     description: "Get a combined package of airtime, bundles, and data.",
-    url: "/all-in-one",
+    url: "https://datarush.lunar.cyou/sstopup",
   },
   {
     title: "Hot Deals",
     Icon: GiReceiveMoney,
     description: "Don’t miss our limited-time offers and discounts.",
-    url: "/hot-deals",
+    url: "https://datarush.lunar.cyou/sstopup",
   },
   {
     title: "Flex Packages",
     Icon: GiMoneyStack,
     description: "Customize your own flexible bundle to suit your needs.",
-    url: "/flex-packages",
+    url: "https://datarush.lunar.cyou/sstopup",
   },
 ];
 
@@ -124,7 +124,7 @@ export default function TopUpNow() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <Link href={service.url} className="block">
+              <a href={service.url} target="_blank" rel="noopener noreferrer" className="block">
                 <div className="flex items-center justify-between p-6 bg-white rounded-xl shadow hover:shadow-lg transition-shadow cursor-pointer">
                   <div className="flex items-center space-x-4">
                     <service.Icon className="text-3xl text-green-500" />
@@ -134,7 +134,7 @@ export default function TopUpNow() {
                     Read More
                   </span>
                 </div>
-              </Link>
+              </a>
             </motion.div>
           ))}
         </div>
