@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 const channels = [
   { name: "Website", Icon: FaGlobe, link: "https://datarush.lunar.cyou/sstopup" },
-  { name: "App", Icon: FaMobileAlt, link: "https://datarush.lunar.cyou/sstopup" },
+  { name: "App 🚀 Coming Soon", Icon: FaMobileAlt, link: "#" },
   { name: "WhatsApp Bot", Icon: FaWhatsapp, link: "https://wa.me/254700042349?text=Hello" },
   { name: "Facebook Bot", Icon: FaFacebook, link: "https://www.facebook.com/kevin.rotich.9" },
   { name: "Offline Purchase (Payslips)", Icon: FaStore, link: "https://www.scofhub.com/post/buy-ss-topup-packages-offline-using-paybill" },

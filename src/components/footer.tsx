@@ -66,11 +66,11 @@ export default function Footer() {
 
         {/* Download App */}
         <div>
-          <h3 className="text-lg font-semibold uppercase">Download SSTOPUP</h3>
+          <h3 className="text-lg font-semibold uppercase">Download SSTOPUP Exchange</h3>
           <div className="mt-4 flex justify-center">
-            <Link href="https://play.google.com/store/apps/details?id=com.lunartech.sstopup">
-              <Image src={googlePlayIcon} alt="Google Play" width={150} height={50} />
-            </Link>
+            <span className="inline-block bg-gray-400 text-white px-8 py-3 rounded-lg text-lg font-medium shadow cursor-not-allowed">
+              🚀 Coming Soon
+            </span>
           </div>
           <h3 className="text-lg text-black font-semibold uppercase mt-6">Need Help?</h3>
           <div className="mt-4 flex flex-col items-center">

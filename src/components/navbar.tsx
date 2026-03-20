@@ -83,13 +83,9 @@ export default function Navbar() {
           </Link>
           {/* CTA Button for Mobile too */}
           <div className="mt-4 md:hidden px-4"> 
-            <Link
-              href="/download"
-              onClick={() => setIsOpen(false)}
-              className="block bg-red-500 text-white text-center py-2 rounded-lg font-medium hover:bg-red-600 transition"
-            >
-              SSTOPUP APP
-            </Link>
+            <span className="block bg-gray-400 text-white text-center py-2 rounded-lg font-medium cursor-not-allowed">
+              🚀 Coming Soon
+            </span>
           </div>
         </nav>
 

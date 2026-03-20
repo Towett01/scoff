@@ -14,7 +14,7 @@ export default function OurServices() {
     //   icon: <FiDollarSign className="text-4xl text-green-600" />,
     // },
     {
-      title: "SS TopUp",
+      title: "SSTOPUP Exchange",
       description:
         "Recharge your mobile, buy data, send money, and more — all from a single, convenient platform.",
       icon: <FiSmartphone className="text-4xl text-yellow-500" />,
@@ -90,12 +90,9 @@ export default function OurServices() {
           viewport={{ once: true }}
           className="mt-16"
         >
-          <a
-            href="https://play.google.com/store/apps/details?id=com.lunartech.sstopup&pcampaignid=web_share"
-            className="inline-block bg-red-400 text-white px-8 py-3 rounded-lg text-lg font-medium shadow hover:bg-red-600 transition duration-300"
-          >
-            Download SSTOPUP
-          </a>
+          <span className="inline-block bg-gray-400 text-white px-8 py-3 rounded-lg text-lg font-medium shadow cursor-not-allowed">
+              🚀 Coming Soon
+            </span>
         </motion.div>
       </div>
     </section>
