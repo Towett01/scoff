@@ -17,6 +17,7 @@ const nextConfig: NextConfig = {
     return [
       // SSTOPUP Exchange short links
       { source: "/topup", destination: "https://datarush.lunar.cyou/sstopup", permanent: false },
+      { source: "/wa-channel", destination: "https://www.whatsapp.com/channel/0029Vb4Zl7p3rZZivKYCL80M", permanent: false },
       { source: "/howto", destination: "https://www.scofhub.com/post/how-to-access-ss-topup-services", permanent: false },
       { source: "/wa", destination: "https://wa.me/254700042349?text=Hello", permanent: false },
       { source: "/fb", destination: "https://www.facebook.com/kevin.rotich.9", permanent: false },
