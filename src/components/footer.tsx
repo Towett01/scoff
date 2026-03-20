@@ -66,7 +66,7 @@ export default function Footer() {
           </div>
           <h3 className="text-lg text-black font-semibold uppercase mt-6">Need Help?</h3>
           <div className="mt-4 flex flex-col items-center">
-            <p>If you have questions, +254XXXXXXXX</p>
+            <p>If you have questions, +254724047256</p>
             <Link
               href="https://api.whatsapp.com/send/?phone=%2B254701087389&text&type=phone_number&app_absent=0"
               className="inline-block bg-green-600 text-white px-4 py-2 mt-2 rounded-lg font-semibold hover:bg-green-700 transition"
@@ -82,12 +82,12 @@ export default function Footer() {
           <h3 className="text-lg font-semibold uppercase">FAQs</h3>
           <ul className="mt-4 space-y-2 text-sm text-black underline">
             <li>
-              <Link href="/post/12-free-must-know-websites-for-every-developer-authorimage-noor-mohammad-product-insights-knowledge" className="hover:underline hover:text-gray-200">
+              <Link href="/blogs" className="hover:underline hover:text-gray-200">
                 How does the referral program work?
               </Link>
             </li>
             <li>
-              <Link href="/post/12-free-must-know-websites-for-every-developer-authorimage-noor-mohammad-product-insights-knowledge" className="hover:underline hover:text-gray-200">
+              <Link href="/blogs" className="hover:underline hover:text-gray-200">
                 How can I check my Bonga Points balance?
               </Link>
             </li>
