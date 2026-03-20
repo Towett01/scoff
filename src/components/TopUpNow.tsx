@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { FaGlobe, FaMobileAlt, FaWhatsapp, FaFacebook, FaStore } from "react-icons/fa";
 import { GiReceiveMoney, GiMoneyStack } from "react-icons/gi";
+import ComingSoonModal, { useComingSoon } from "./ComingSoonModal";
 import { MdEditNote } from "react-icons/md";
 import { motion } from "framer-motion";
 
@@ -66,9 +67,11 @@ const services = [
 ];
 
 export default function TopUpNow() {
+  const { show, open, close } = useComingSoon();
 
   return (
     <section className="py-2 px-6 bg-gradient-to-r from-green-100 via-white to-red-100 relative">
+      {show && <ComingSoonModal onClose={close} />}
       <div className="max-w-6xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -89,17 +92,29 @@ export default function TopUpNow() {
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
         >
           {channels.map(({ name, Icon, link }) => (
-            <motion.a
-              key={name}
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center p-4 border border-red-200 rounded-lg bg-white shadow-sm hover:shadow-md transition-shadow cursor-pointer"
-              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-            >
-              <Icon className="text-2xl text-green-600 mb-2" />
-              <span className="text-gray-700 font-medium">{name}</span>
-            </motion.a>
+            link === "#" ? (
+              <motion.button
+                key={name}
+                onClick={open}
+                className="flex flex-col items-center p-4 border border-red-200 rounded-lg bg-white shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+                variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              >
+                <Icon className="text-2xl text-green-600 mb-2" />
+                <span className="text-gray-700 font-medium">App</span>
+              </motion.button>
+            ) : (
+              <motion.a
+                key={name}
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center p-4 border border-red-200 rounded-lg bg-white shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+                variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              >
+                <Icon className="text-2xl text-green-600 mb-2" />
+                <span className="text-gray-700 font-medium">{name}</span>
+              </motion.a>
+            )
           ))}
         </motion.div>
 

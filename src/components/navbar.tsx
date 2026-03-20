@@ -3,12 +3,15 @@ import Link from "next/link";
 import Image from "next/image";
 import logoImage from "../../public/assets/logoo.png";
 import { useState } from "react";
+import ComingSoonModal, { useComingSoon } from "./ComingSoonModal";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { show, open, close } = useComingSoon();
 
   return (
     <header className="bg-gradient-to-r from-green-100 via-white to-red-100 py-4 top-0 left-0 w-full z-50">
+      {show && <ComingSoonModal onClose={close} />}
       <div className="container mx-auto flex items-center justify-between px-4 relative">
         {/* Logo */}
         <div className="flex items-center z-50">
@@ -83,9 +86,12 @@ export default function Navbar() {
           </Link>
           {/* CTA Button for Mobile too */}
           <div className="mt-4 md:hidden px-4"> 
-            <span className="block bg-gray-400 text-white text-center py-2 rounded-lg font-medium cursor-not-allowed">
-              🚀 Coming Soon
-            </span>
+            <button
+              onClick={open}
+              className="block w-full bg-red-500 text-white text-center py-2 rounded-lg font-medium hover:bg-red-600 transition"
+            >
+              📱 Download App
+            </button>
           </div>
         </nav>
 

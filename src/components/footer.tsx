@@ -5,10 +5,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaGlobe, FaMobileAlt, FaWhatsapp, FaFacebook, FaStore } from "react-icons/fa";
 import googlePlayIcon from "../../public/assets/google-play.png";
+import ComingSoonModal, { useComingSoon } from "./ComingSoonModal";
 
 export default function Footer() {
+  const { show, open, close } = useComingSoon();
   return (
     <footer className="relative text-black py-8">
+      {show && <ComingSoonModal onClose={close} />}
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#ec8787] to-[#76f576] opacity-90"></div>
 
@@ -68,9 +71,12 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-semibold uppercase">Download SSTOPUP Exchange</h3>
           <div className="mt-4 flex justify-center">
-            <span className="inline-block bg-gray-400 text-white px-8 py-3 rounded-lg text-lg font-medium shadow cursor-not-allowed">
-              🚀 Coming Soon
-            </span>
+            <button
+              onClick={open}
+              className="inline-block bg-red-400 text-white px-8 py-3 rounded-lg text-lg font-medium shadow hover:bg-red-500 transition duration-300"
+            >
+              📱 Download App
+            </button>
           </div>
           <h3 className="text-lg text-black font-semibold uppercase mt-6">Need Help?</h3>
           <div className="mt-4 flex flex-col items-center">

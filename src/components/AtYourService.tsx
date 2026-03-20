@@ -4,10 +4,12 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FiSmartphone, FiEdit3 } from "react-icons/fi";
+import ComingSoonModal, { useComingSoon } from "./ComingSoonModal";
 
 
 
 export default function ServiceCards() {
+  const { show, open, close } = useComingSoon();
 
   const services = [
     // {
@@ -34,6 +36,7 @@ export default function ServiceCards() {
 
   return (
     <section className="relative py-20 px-6 bg-gradient-to-r from-green-100 via-white to-red-100 overflow-hidden">
+      {show && <ComingSoonModal onClose={close} />}
       <div className="max-w-6xl mx-auto text-center ">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -93,9 +96,12 @@ export default function ServiceCards() {
           viewport={{ once: true }}
           className="mt-16"
         >
-          <span className="inline-block bg-gray-400 text-white px-8 py-3 rounded-lg text-lg font-medium shadow cursor-not-allowed">
-              🚀 Coming Soon
-            </span>
+          <button
+              onClick={open}
+              className="inline-block bg-red-400 text-white px-8 py-3 rounded-lg text-lg font-medium shadow hover:bg-red-500 transition duration-300"
+            >
+              📱 Download App
+            </button>
         </motion.div>
       </div>
     </section>
