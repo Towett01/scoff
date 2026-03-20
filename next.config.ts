@@ -22,7 +22,7 @@ const nextConfig: NextConfig = {
       { source: "/wa", destination: "https://wa.me/254700042349?text=Hello", permanent: false },
       { source: "/fb", destination: "https://www.facebook.com/kevin.rotich.9", permanent: false },
       { source: "/offline", destination: "https://www.scofhub.com/post/buy-ss-topup-packages-offline-using-paybill", permanent: false },
-      { source: "/support", destination: "https://wa.me/254701087389", permanent: false },
+      { source: "/support", destination: "https://wa.me/254701087389?text=Hello", permanent: false },
     ];
   },
 };
