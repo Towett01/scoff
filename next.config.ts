@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   images: {
     remotePatterns: [
       {
@@ -13,6 +12,17 @@ const nextConfig: NextConfig = {
         hostname: "lh3.googleusercontent.com",
       },
     ],
+  },
+  async redirects() {
+    return [
+      // SSTOPUP Exchange short links
+      { source: "/topup", destination: "https://datarush.lunar.cyou/sstopup", permanent: false },
+      { source: "/howto", destination: "https://www.scofhub.com/post/how-to-access-ss-topup-services", permanent: false },
+      { source: "/wa", destination: "https://wa.me/254700042349?text=Hello", permanent: false },
+      { source: "/fb", destination: "https://www.facebook.com/kevin.rotich.9", permanent: false },
+      { source: "/offline", destination: "https://www.scofhub.com/post/buy-ss-topup-packages-offline-using-paybill", permanent: false },
+      { source: "/support", destination: "https://wa.me/254701087389", permanent: false },
+    ];
   },
 };
 
