@@ -17,6 +17,7 @@ const nextConfig: NextConfig = {
     return [
       // SSTOPUP Exchange short links
       { source: "/app", destination: "https://play.google.com/store/apps/details?id=com.scofservice.sstopupexchange", permanent: false },
+      { source: "/refer", destination: "/refer", permanent: false },
       { source: "/topup", destination: "https://datarush.lunar.cyou/sstopup", permanent: false },
       { source: "/wa-channel", destination: "https://www.whatsapp.com/channel/0029Vb4Zl7p3rZZivKYCL80M", permanent: false },
       { source: "/refer-earn", destination: "https://www.scofhub.com/post/refer-and-earn-sharing-sstopup", permanent: false },
