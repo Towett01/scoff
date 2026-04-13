@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { trackReferPopupShown, trackReferPopupDismissed, trackReferStart } from "@/lib/analytics";
 
 export default function ReferPopup() {
   const [show, setShow] = useState(false);
@@ -13,6 +14,7 @@ export default function ReferPopup() {
     const timer = setTimeout(() => {
       setShow(true);
       sessionStorage.setItem("referPopupShown", "true");
+      trackReferPopupShown();
     }, 15000);
 
     return () => clearTimeout(timer);
@@ -26,7 +28,7 @@ export default function ReferPopup() {
         <div className="h-2 bg-gradient-to-r from-orange-500 to-purple-600" />
 
         <button
-          onClick={() => setShow(false)}
+          onClick={() => { setShow(false); trackReferPopupDismissed(); }}
           className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 transition text-xl font-bold"
         >
           ✕
@@ -40,7 +42,7 @@ export default function ReferPopup() {
           </h2>
 
           <p className="text-gray-500 mb-6">
-            Invite a new user to SSTOPUP Exchange via link or phone number. When they purchase KES 20+, you earn KES 20!
+            Invite a new user to SSTOPUP Exchange via link or phone number. When they purchase KES 20+, you earn KES 20 M-Pesa cash!
           </p>
 
           <div className="flex justify-center gap-3 mb-6">
@@ -60,14 +62,14 @@ export default function ReferPopup() {
 
           <Link
             href="/refer"
-            onClick={() => setShow(false)}
+            onClick={() => { setShow(false); trackReferStart("popup"); }}
             className="block w-full py-3 bg-gradient-to-r from-orange-500 to-purple-600 text-white font-bold text-lg rounded-xl hover:opacity-90 transition"
           >
             Start Earning Now
           </Link>
 
           <button
-            onClick={() => setShow(false)}
+            onClick={() => { setShow(false); trackReferPopupDismissed(); }}
             className="mt-3 text-sm text-gray-400 hover:text-gray-600 transition"
           >
             Maybe later

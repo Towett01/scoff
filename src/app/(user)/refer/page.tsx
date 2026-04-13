@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { FaMobileAlt, FaGlobe, FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { trackReferMethodChosen, trackReferWhatsAppShare } from "@/lib/analytics";
 
 export default function ReferPage() {
   const [chosen, setChosen] = useState<"app" | "website" | null>(null);
@@ -53,7 +54,7 @@ export default function ReferPage() {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => setChosen("app")}
+                onClick={() => { setChosen("app"); trackReferMethodChosen("app"); }}
                 className="flex items-center gap-4 bg-orange-500 text-white px-6 py-5 rounded-2xl shadow-lg hover:bg-orange-600 transition"
               >
                 <div className="bg-white bg-opacity-20 p-3 rounded-xl">
@@ -69,7 +70,7 @@ export default function ReferPage() {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => setChosen("website")}
+                onClick={() => { setChosen("website"); trackReferMethodChosen("website"); }}
                 className="flex items-center gap-4 bg-purple-600 text-white px-6 py-5 rounded-2xl shadow-lg hover:bg-purple-700 transition"
               >
                 <div className="bg-white bg-opacity-20 p-3 rounded-xl">
@@ -139,6 +140,7 @@ export default function ReferPage() {
                 href="https://wa.me/?text=I%20use%20SS%20TOPUP%20to%20buy%20data%2C%20minutes%2C%20calls%2C%20SMS%20%E2%80%94%20even%20with%20Okoa%20Jahazi%20%E2%80%94%20at%20great%20prices!%20Sign%20up%20and%20make%20your%20first%20purchase%20of%20KES%2020%2B%20to%20earn%20me%20KES%2020.%20Check%20out%20scofhub.com%2Ftopup%20to%20make%20purchases%20even%20without%20data.%20Join%20to%20also%20refer%20and%20make%20some%20money%20-%20scofhub.com%2Frefer"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackReferWhatsAppShare()}
                 className="flex items-center justify-center gap-2 bg-green-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-700 transition"
               >
                 <FaWhatsapp className="text-xl" />

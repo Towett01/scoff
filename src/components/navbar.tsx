@@ -4,6 +4,7 @@ import Image from "next/image";
 import logoImage from "../../public/assets/logoo.png";
 import { useState } from "react";
 import ComingSoonModal, { useComingSoon } from "./ComingSoonModal";
+import { trackTopUp, trackDownloadApp } from "@/lib/analytics";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -87,7 +88,7 @@ export default function Navbar() {
           {/* CTA Button for Mobile too */}
           <div className="mt-4 md:hidden px-4"> 
             <button
-              onClick={open}
+              onClick={(e) => { open(e); trackDownloadApp("navbar_mobile"); }}
               className="block w-full bg-red-500 text-white text-center py-2 rounded-lg font-medium hover:bg-red-600 transition"
             >
               📱 Download App
