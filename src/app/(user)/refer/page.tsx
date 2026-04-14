@@ -1,12 +1,12 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { FaMobileAlt, FaGlobe, FaWhatsapp } from "react-icons/fa";
+import { FaGlobe, FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { trackReferMethodChosen, trackReferWhatsAppShare } from "@/lib/analytics";
 
 export default function ReferPage() {
-  const [chosen, setChosen] = useState<"app" | "website" | null>(null);
+  const [chosen, setChosen] = useState(false);
 
   return (
     <section className="min-h-screen bg-gradient-to-br from-green-50 via-white to-red-50 flex items-center justify-center px-4 py-16">
@@ -47,37 +47,21 @@ export default function ReferPage() {
             </div>
 
             <p className="text-gray-700 font-semibold text-lg mb-6">
-              How would you like to refer?
+              Ready to start referring?
             </p>
 
             <div className="grid grid-cols-1 gap-4 mb-8">
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => { setChosen("app"); trackReferMethodChosen("app"); }}
-                className="flex items-center gap-4 bg-orange-500 text-white px-6 py-5 rounded-2xl shadow-lg hover:bg-orange-600 transition"
-              >
-                <div className="bg-white bg-opacity-20 p-3 rounded-xl">
-                  <FaMobileAlt className="text-2xl" />
-                </div>
-                <div className="text-left">
-                  <p className="font-bold text-lg">Via App</p>
-                  <p className="text-orange-100 text-sm">Share link or enter phone number in app</p>
-                </div>
-                <span className="ml-auto text-2xl">→</span>
-              </motion.button>
-
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => { setChosen("website"); trackReferMethodChosen("website"); }}
+                onClick={() => { setChosen(true); trackReferMethodChosen("website"); }}
                 className="flex items-center gap-4 bg-purple-600 text-white px-6 py-5 rounded-2xl shadow-lg hover:bg-purple-700 transition"
               >
                 <div className="bg-white bg-opacity-20 p-3 rounded-xl">
                   <FaGlobe className="text-2xl" />
                 </div>
                 <div className="text-left">
-                  <p className="font-bold text-lg">Via Website</p>
+                  <p className="font-bold text-lg">Refer Via Website</p>
                   <p className="text-purple-100 text-sm">Share link or enter phone number on website</p>
                 </div>
                 <span className="ml-auto text-2xl">→</span>
@@ -85,7 +69,7 @@ export default function ReferPage() {
             </div>
 
             <p className="text-xs text-gray-400">
-              Both options work equally well. Choose whichever is easier for you.
+              Share your referral link with as many friends as you want.
             </p>
           </motion.div>
         ) : (
@@ -98,12 +82,10 @@ export default function ReferPage() {
             <div className="bg-white rounded-2xl shadow-xl p-8 mb-6">
               <div className="text-5xl mb-4">🎉</div>
               <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                {chosen === "app" ? "Refer via App" : "Refer via Website"}
+                Refer via Website
               </h2>
               <p className="text-gray-500 mb-6">
-                {chosen === "app"
-                  ? "Open the SSTOPUP Exchange app and share your referral link or enter your friend's phone number."
-                  : "Visit the SSTOPUP Exchange website and share your referral link or enter your friend's phone number."}
+                Visit the SSTOPUP Exchange website and share your referral link or enter your friend&apos;s phone number.
               </p>
 
               <div className="bg-gray-50 border border-gray-200 rounded-xl px-5 py-4 mb-6 text-left">
@@ -114,23 +96,19 @@ export default function ReferPage() {
               </div>
 
               <Link
-                href={chosen === "app" ? "https://scofhub.com/app" : "https://scofhub.com/topup"}
+                href="https://scofhub.com/topup"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`block text-white px-8 py-4 rounded-xl font-bold text-lg transition mb-4 ${
-                  chosen === "app"
-                    ? "bg-orange-500 hover:bg-orange-600"
-                    : "bg-purple-600 hover:bg-purple-700"
-                }`}
+                className="block text-white px-8 py-4 rounded-xl font-bold text-lg transition mb-4 bg-purple-600 hover:bg-purple-700"
               >
-                {chosen === "app" ? "Open App" : "Open Website"}
+                Open Website
               </Link>
 
               <button
-                onClick={() => setChosen(null)}
+                onClick={() => setChosen(false)}
                 className="text-sm text-gray-400 hover:text-gray-600 transition underline"
               >
-                Go back &amp; choose differently
+                Go back
               </button>
             </div>
 
