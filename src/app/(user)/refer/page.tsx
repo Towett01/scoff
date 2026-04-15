@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { FaGlobe, FaWhatsapp } from "react-icons/fa";
+import { FaGlobe, FaWhatsapp, FaFacebook, FaStore } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { trackReferMethodChosen, trackReferWhatsAppShare } from "@/lib/analytics";
 
@@ -124,6 +124,83 @@ export default function ReferPage() {
                 <FaWhatsapp className="text-xl" />
                 Share on WhatsApp
               </Link>
+            </div>
+
+            {/* Tell your friend how to buy */}
+            <div className="bg-yellow-50 border border-yellow-200 rounded-xl px-5 py-5 mb-6 text-left">
+              <p className="text-sm font-semibold text-yellow-800 mb-1">🛒 Tell your friend how to buy</p>
+              <p className="text-sm text-yellow-700 mb-4">
+                Your friend needs to purchase KES 20+ for you to earn. They can buy even without data!
+              </p>
+
+              <div className="flex flex-col gap-2">
+                <Link
+                  href="https://datarush.lunar.cyou/sstopup"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 bg-white border border-yellow-200 rounded-lg p-3 hover:shadow-md transition"
+                >
+                  <div className="w-9 h-9 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <FaGlobe className="text-green-600" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-sm font-semibold text-yellow-800">Website</p>
+                    <p className="text-xs text-yellow-700">scofhub.com/topup</p>
+                  </div>
+                </Link>
+
+                <Link
+                  href="https://wa.me/254700042349?text=Hello"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 bg-white border border-yellow-200 rounded-lg p-3 hover:shadow-md transition"
+                >
+                  <div className="w-9 h-9 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <FaWhatsapp className="text-green-600" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-sm font-semibold text-yellow-800">WhatsApp Bot</p>
+                    <p className="text-xs text-yellow-700">Message &quot;Hello&quot; to start</p>
+                  </div>
+                  <span className="bg-green-50 text-green-700 text-xs font-semibold px-2 py-1 rounded-md whitespace-nowrap">FREE WhatsApp</span>
+                </Link>
+
+                <Link
+                  href="https://www.facebook.com/kevin.rotich.9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 bg-white border border-yellow-200 rounded-lg p-3 hover:shadow-md transition"
+                >
+                  <div className="w-9 h-9 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <FaFacebook className="text-blue-600" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-sm font-semibold text-yellow-800">Facebook Bot</p>
+                    <p className="text-xs text-yellow-700">Message &quot;Start&quot; to activate</p>
+                  </div>
+                  <span className="bg-blue-50 text-blue-700 text-xs font-semibold px-2 py-1 rounded-md whitespace-nowrap">FREE Facebook</span>
+                </Link>
+
+                <Link
+                  href="https://www.scofhub.com/post/buy-ss-topup-packages-offline-using-paybill"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 bg-white border border-yellow-200 rounded-lg p-3 hover:shadow-md transition"
+                >
+                  <div className="w-9 h-9 bg-orange-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <FaStore className="text-orange-500" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-sm font-semibold text-yellow-800">Offline (no data needed)</p>
+                    <p className="text-xs text-yellow-700">Buy via Paybill — works without data</p>
+                  </div>
+                  <span className="bg-orange-50 text-orange-700 text-xs font-semibold px-2 py-1 rounded-md whitespace-nowrap">No data</span>
+                </Link>
+              </div>
+
+              <p className="text-xs text-yellow-700 mt-3 text-center">
+                ✅ WhatsApp &amp; Facebook are free on most Kenyan networks — no data charges!
+              </p>
             </div>
 
             <p className="text-xs text-gray-400">
