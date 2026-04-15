@@ -8,6 +8,25 @@ import { trackReferMethodChosen, trackReferWhatsAppShare, trackTopUp } from "@/l
 export default function ReferPage() {
   const [chosen, setChosen] = useState(false);
 
+  const LearnMoreBanner = () => (
+    <div className="bg-purple-50 border border-purple-200 rounded-2xl px-6 py-5 text-center mt-6">
+      <p className="text-purple-800 font-bold text-lg mb-2">
+        Want to learn more about Refer &amp; Earn?
+      </p>
+      <p className="text-purple-600 text-sm mb-4">
+        Read the full guide on how to refer friends and earn KES 20 per referral.
+      </p>
+      <Link
+        href="https://scofhub.com/refer-earn"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block bg-purple-600 text-white px-8 py-3 rounded-xl font-semibold text-base hover:bg-purple-700 transition"
+      >
+        Read Full Guide →
+      </Link>
+    </div>
+  );
+
   return (
     <section className="min-h-screen bg-gradient-to-br from-green-50 via-white to-red-50 flex items-center justify-center px-4 py-16">
       <div className="max-w-lg w-full">
@@ -79,7 +98,7 @@ export default function ReferPage() {
               Ready to start referring?
             </p>
 
-            <div className="grid grid-cols-1 gap-4 mb-8">
+            <div className="grid grid-cols-1 gap-4 mb-4">
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -97,9 +116,11 @@ export default function ReferPage() {
               </motion.button>
             </div>
 
-            <p className="text-xs text-gray-400">
+            <p className="text-xs text-gray-400 mb-2">
               Share your referral link with as many friends as you want.
             </p>
+
+            <LearnMoreBanner />
           </motion.div>
         ) : (
           <motion.div
@@ -232,12 +253,7 @@ export default function ReferPage() {
               </p>
             </div>
 
-            <p className="text-xs text-gray-400">
-              Learn more about Refer &amp; Earn at{" "}
-              <Link href="https://scofhub.com/refer-earn" className="underline text-purple-600">
-                scofhub.com/refer-earn
-              </Link>
-            </p>
+            <LearnMoreBanner />
           </motion.div>
         )}
       </div>
