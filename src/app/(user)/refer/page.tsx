@@ -3,7 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { FaGlobe, FaWhatsapp, FaFacebook, FaStore } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { trackReferMethodChosen, trackReferWhatsAppShare } from "@/lib/analytics";
+import { trackReferMethodChosen, trackReferWhatsAppShare, trackTopUp } from "@/lib/analytics";
 
 export default function ReferPage() {
   const [chosen, setChosen] = useState(false);
@@ -11,6 +11,35 @@ export default function ReferPage() {
   return (
     <section className="min-h-screen bg-gradient-to-br from-green-50 via-white to-red-50 flex items-center justify-center px-4 py-16">
       <div className="max-w-lg w-full">
+
+        {/* Top Up Banner - always visible */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-6"
+        >
+          <Link
+            href="https://datarush.lunar.cyou/sstopup"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackTopUp("refer_page_banner")}
+            className="block bg-gradient-to-r from-green-500 to-green-600 rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
+          >
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-green-100 text-xs font-semibold uppercase tracking-wider mb-1">SSTOPUP Exchange</p>
+                <p className="text-white text-xl font-bold">Buy Your Package Now!</p>
+                <p className="text-green-100 text-sm mt-1">Airtime, Data, Bonga Points, Okoa Jahazi &amp; more</p>
+              </div>
+              <div className="bg-white rounded-xl px-4 py-3 flex-shrink-0">
+                <p className="text-green-600 font-bold text-sm">Top Up</p>
+                <p className="text-green-600 font-bold text-sm">Now →</p>
+              </div>
+            </div>
+          </Link>
+        </motion.div>
+
         {!chosen ? (
           <motion.div
             initial={{ opacity: 0, y: 30 }}
