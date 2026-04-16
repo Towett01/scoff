@@ -83,7 +83,7 @@ export default function ReferPage() {
               <p className="text-sm text-orange-700">1. Share your referral link or enter friend&apos;s phone number</p>
             
               <p className="text-sm text-orange-700">2. They make a purchase of KES 20+ or more</p>
-              <p className="text-sm text-orange-700 font-bold">3. You earn KES 20 CASH! 🎉</p>
+              <p className="text-sm text-orange-700 font-bold">3. You earn KES 20 CASH!! 🎉</p>
             </div>
 
             <div className="bg-blue-50 border border-blue-200 rounded-xl px-6 py-4 mb-8 text-left">
